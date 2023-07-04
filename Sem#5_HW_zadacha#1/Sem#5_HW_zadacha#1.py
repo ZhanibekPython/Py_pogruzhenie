@@ -9,4 +9,4 @@ def absolute_path_partitition(adres: str):
     name = adres.split('/')[-1].split('.')[0]
     return path, name, format
 
-print(absolute_path_partitition('c:/Users/Vladislav/Desktop/deep_to_python/test.txt)'))
+print(absolute_path_partitition('c:/Users/Vladislav/Desktop/deep_to_python/test.txt'))
