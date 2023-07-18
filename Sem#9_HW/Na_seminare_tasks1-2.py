@@ -3,25 +3,6 @@ import json
 from functools import wraps
 
 
-def guess_num(num: int, tries: int) -> callable:
-    def guess() -> bool:
-        for _ in range(tries):
-            user_num = int(input('Guess the number: '))
-            if user_num == num:
-                print('That is it. Good job!')
-                return True
-            elif user_num > num:
-                print('Lower')
-            elif user_num < num:
-                print('Upper')
-        print('You are out of guesses. Sorry!')
-        return False
-    return guess
-
-# the_game = guess_num(55, 5)
-# the_game()
-
-
 low_lim_num = 1
 up_lim_num = 100
 min_tries = 1
