@@ -1,0 +1,48 @@
+{
+    "123.txt": {
+        "name": "123.txt",
+        "parent": "D:\\Check",
+        "type": "file",
+        "size": 65
+    },
+    "another_one": {
+        "name": "another_one",
+        "type": "dir",
+        "size": 69
+    },
+    "1.txt": {
+        "name": "1.txt",
+        "parent": "D:\\Check\\another_one",
+        "type": "file",
+        "size": 75
+    },
+    "2.txt": {
+        "name": "2.txt",
+        "parent": "D:\\Check\\another_one",
+        "type": "file",
+        "size": 75
+    },
+    "3.txt": {
+        "name": "3.txt",
+        "parent": "D:\\Check\\another_one",
+        "type": "file",
+        "size": 75
+    },
+    "One_more": {
+        "name": "One_more",
+        "type": "dir",
+        "size": 66
+    },
+    "asdert.txt": {
+        "name": "asdert.txt",
+        "parent": "D:\\Check\\One_more",
+        "type": "file",
+        "size": 77
+    },
+    "qwerty.txt": {
+        "name": "qwerty.txt",
+        "parent": "D:\\Check\\One_more",
+        "type": "file",
+        "size": 77
+    }
+}
