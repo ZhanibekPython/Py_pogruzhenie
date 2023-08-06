@@ -1,21 +1,29 @@
-from string import punctuation
-
-# def longest_word_in_file(filename: str):
-#     result = ''
-#     with open(filename, 'r', encoding='utf-8') as file:
-#         for word in file.readline().split():
-#             for sign in punctuation:
-#                 if sign in word:
-#                     word = word.replace(sign, '')
-#                 if len(word) >= len(result): result = word
-#     return result
+# def stripper(strip_thing: str = ' '):
+#     def strip_it(text: str):
+#         return text.strip(strip_thing)
 #
+#     return strip_it
 #
-# print(longest_word_in_file('test.txt'))
+# a = stripper()
+# print(a('   arai altik tamina    '))
 
-with open('test.txt', 'r', encoding='utf-8') as file:
-    data = file.readline()
-        for sign in punctuation:
-            if sign in word:
-    #             word = word.replace(sign, '')
-    #             print(word)
+import time
+
+def time_eval(func):
+    def inside_func(*args, **kwargs):
+        start = time.time()
+        res = func(*args, **kwargs)
+        end = time.time()
+        result = start - end
+        return res
+    return inside_func
+
+@time_eval
+def get_fast_nod(a, b):
+    if a < b:
+        a, b = b, a
+    while b:
+        a, b = b, a % b
+    return a, b
+
+print(get_fast_nod(5, 10))

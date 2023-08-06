@@ -45,7 +45,6 @@ class Study:
             if 0 <= digit < 101 != True:
                 raise TypeError('Результаты тестов должны быть в диапозоне [0-100]')
 
-
     def __set_name__(self, owner, name):
         self.p_name = '_' + name
 
@@ -74,17 +73,17 @@ class Student:
 
     def __init__(self, full_name: str, subject: str, marks, tests):
         self.name = full_name
-        self.subj = subject
-        self.marks = marks
-        self.tests = tests
+        # self.subj = subject
+        # self.marks = marks
+        # self.tests = tests
         self.__dict__ = self.__common_subjects
         self.data = {}
         if self.full_name not in self.data:
             self.data[self.full_name] = {self.subject: {'Marks': self.marks, 'Tests': self.tests}}
 
-
     def __str__(self):
         return f'{self.data}'
+
 
 stud1 = Student('Ivanov Ivan Ivanovich', 'Math', (4, 5, 4, 5), (95, 88, 74, 91))
 
