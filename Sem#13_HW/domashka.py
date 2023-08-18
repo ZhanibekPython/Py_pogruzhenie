@@ -81,9 +81,24 @@ class School:
         return (f'{self.storage}, ср. бал по всем дисциплинам: {self.average_points()[0]}, '
                 f'средний бал по тестам: {self.average_points()[1]}')
 
+    def __gt__(self, other):
+        if self.average_points()[0] > other.average_points()[0]:
+            return (f'Успеваемость {self._full_name} лучше {other._full_name} '
+                    f'на {self.average_points()[0] - other.average_points()[0]}')
+        else:
+            return (f'Успеваемость {other._full_name} лучше {self._full_name} '
+                    f'на {other.average_points()[0] - self.average_points()[0]}')
+
+
 
 Vanya = School("Ivanov Ivan Ivanovich", 'Math', (4, 3, 5, 4), (91, 86, 71, 96))
 Vanya.scoring('Math', (2, 3, 4, 5), (70, 80, 90, 100))
 Vanya.scoring("Fisics", (5, 5, 5, 5), (95, 96, 97, 97))
 Vanya.scoring("Geography", (5, 5, 5, 5), (95, 96, 97, 97))
-print(Vanya())
+
+Sanya = School("Sanev Sanya Sanevich", 'Math', (5, 5, 5, 5), (100, 100, 100, 100))
+Sanya.scoring('Math', (5, 5, 5, 5), (100, 90, 100, 100))
+Sanya.scoring("Fisics", (5, 5, 5, 5), (95, 96, 97, 97))
+Sanya.scoring("Geography", (5, 5, 5, 5), (99, 99, 99, 99))
+
+print(Sanya > Vanya)
